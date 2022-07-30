@@ -1,7 +1,7 @@
 import { useAppContext } from '../contexts/AppContext';
 import styles from '../styles/Home.module.css'
 
-function HeroText(params) {
+function HeroText() {
   const { user, setUser } = useAppContext();
 
   const handleChange = (e) => {
@@ -12,16 +12,15 @@ function HeroText(params) {
 
   return (
     <main className={styles.main}>
-      <h1 className="title">
-        CONTEXT APP {`${JSON.stringify(user)}`}
+      <h1>
+        CONTEXT APP {user.name}
       </h1>
 
       <p className="description">
         Example
       </p>
 
-      <label htmlFor="username">Change User Name
-      </label>
+      <label htmlFor="username">Change User Name</label>
       <input type="text" id="username" onChange={handleChange} />
 
     </main>
